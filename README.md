@@ -6,6 +6,7 @@ This implementation is done on PGM greyscale photo files with some examples in t
 ## Table of contents
 * [Running](#Running)
 * [Status](#Status)
+* [About](#About)
 
 ## Running
 > To compile Project run the following command
@@ -44,3 +45,8 @@ make
 
 ## Status
 * The Console application is done.
+
+## About
+> This is part of the SBE201 course in the [Systems and Biomedical Engineering Department - Cairo University](http://bmes.cufe.edu.eg/)\
+ Dr.Ahmed Kandil\
+ TA. Asem Alaa
