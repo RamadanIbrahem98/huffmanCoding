@@ -1,5 +1,10 @@
 # Huffman Coding
 
+<p align="center">
+  <img src="https://img.shields.io/github/license/RamadanIbrahem98/huffmanCoding?style=plastic&logo=appveyor&color=blue" alt="license" />
+  <img src="https://img.shields.io/github/last-commit/RamadanIbrahem98/huffmanCoding?style=plastic&logo=appveyor" alt="last-commit" />
+</p>
+
 This is an Implementation for the huffman coding algorithm for lossless compression.
 This implementation is done on PGM greyscale photo files with some examples in the **data** folder.
 
