@@ -2,7 +2,7 @@
 
 HuffmanCoding::HuffmanCoding(std::string fileName)
 {
-	IO.setTargetName(fileName);
+    IO.setTargetName(fileName);
 }
 
 void HuffmanCoding::constructFreqTable()
@@ -15,7 +15,7 @@ void HuffmanCoding::constructFreqTable()
 
 void HuffmanCoding::constructTree()
 {
-	struct freqCompare
+    struct freqCompare
     {
         bool operator()(Node *l, Node *r)
         {
@@ -60,13 +60,13 @@ void HuffmanCoding::constructCodeWords(Node *parent, char *word, int index)
         word[index] = '0';
         constructCodeWords(parent->left, word, index + 1);
     }
-    
+
     if (parent->right)
     {
         word[index] = '1';
         constructCodeWords(parent->right, word, index + 1);
     }
-    
+
     if (!(parent->right || parent->left))
     {
         std::string codeWord(word, word + index);
@@ -78,8 +78,8 @@ void HuffmanCoding::createEncoded()
 {
     for (auto element : input)
     {
-            std::string binary = leafCodeWord[element];
-            strEncoded += binary;
+        std::string binary = leafCodeWord[element];
+        strEncoded += binary;
     }
     encodedLength = strEncoded.length();
 }
@@ -109,16 +109,16 @@ void HuffmanCoding::toDecimal()
             decimalPacked.push_back(std::bitset<8>(str).to_ulong());
         }
     }
-}   
+}
 
 void HuffmanCoding::traverseDown()
 {
-   for(int i = 0; i < encodedLength;)
+    for (int i = 0; i < encodedLength;)
     {
-        Node* current = builtTree;
+        Node *current = builtTree;
         while (current->left != nullptr && current->right != nullptr)
         {
-            if(strToDecode[i] == '0')
+            if (strToDecode[i] == '0')
                 current = current->left;
             else
                 current = current->right;
@@ -130,9 +130,9 @@ void HuffmanCoding::traverseDown()
 
 void HuffmanCoding::encode(std::string filePath)
 {
-	IO.pgmRead(filePath,filetype, rows, cols, greyscaleMax, size, input);
+    IO.pgmRead(filePath, filetype, rows, cols, greyscaleMax, size, input);
     constructFreqTable();
-	constructTree();
+    constructTree();
     createEncoded();
     toDecimal();
     IO.freqWrite(filetype, rows, cols, greyscaleMax, encodedLength, freqTable);
