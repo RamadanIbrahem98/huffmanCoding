@@ -16,17 +16,17 @@ This implementation is done on PGM greyscale photo files with some examples in t
 ## Running
 > To compile Project run the following command
 ```terminal
-g++ main.cpp huffman.cpp IOStream.cpp -o huffman.o
+g++ main.cpp huffman.cpp IOStream.cpp -o huffman
 ```
 
 > To Run the program for compression you should pass one argument (photo path) and you should have a folder in the pwd named ``encoded``
 ```terminal
-./huffman.o ./directory/filename.pgm
+./huffman ./directory/filename.pgm
 ```
 
 > To Run the program for decompression you should pass two arguments (frequency table and compressed file) and you shold have a folder in the pwd named ``decoded``
 ```terminal
-./huffman.o ./encoded/filename.huf ./encoded/filename.frq
+./huffman ./encoded/filename.huf ./encoded/filename.frq
 ```
 
 ### Using CMake
@@ -40,11 +40,11 @@ make
 ```
 > To Run the program for compression you should pass one argument (photo path) and you should have a folder in the pwd named ``encoded``
 ```terminal
-./huffman.o ../data/filename.pgm
+./huffman ../data/filename.pgm
 ```
 > To Run the program for decompression you should pass two arguments (frequency table and compressed file) and you shold have a folder in the pwd named ``decoded``
 ```terminal
-./huffman.o ./encoded/filename.huf ./encoded/filename.frq
+./huffman ./encoded/filename.huf ./encoded/filename.frq
 ```
 
 
