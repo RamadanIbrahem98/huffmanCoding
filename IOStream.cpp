@@ -128,17 +128,13 @@ void IOStream::freqRead(std::string target, std::string &filetype, int &rows, in
 
     int greyValue;
     int frequency;
-    while (!read.eof())
+    while (true)
     {
         read >> greyValue >> frequency;
-        if (!freq[greyValue])
-        {
-            for (int i = 0; i < frequency; i++)
-                freq[greyValue]++;
-        }
+        if (read.eof())
+            break;
     }
     read.close();
-    // freq[255] /= 2; // I Don't Know why but It has to be here to work
 }
 
 void IOStream::freqWrite(std::string &filetype, int &rows, int &cols,
